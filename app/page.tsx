@@ -9,24 +9,20 @@ export default function Home() {
   const [search, setSearch] = React.useState<string | null>(null);
   const [result, setResult] = React.useState<InstantObject[]>([]);
 
-  const query = React.useMemo(() => {
-    return {
-      courses: {
-        $option: {
-          where: {
-            or: [
-              { subject: { $ilike: `%${search}%` } },
-              { code: { $ilike: `%${search}%` } },
-              { name: { $ilike: `%${search}%` } },
-            ],
-          },
-          limit: 15,
+  const { isLoading, error, data } = db.useQuery({
+    courses: {
+      $: {
+        where: {
+          or: [
+            { subject: { $ilike: `%${search}%` } },
+            { code: { $ilike: `%${search}%` } },
+            { name: { $ilike: `%${search}%` } },
+          ],
         },
+        limit: 15,
       },
-    };
-  }, [search]);
-
-  const { isLoading, error, data } = db.useQuery(query);
+    },
+  });
 
   React.useEffect(() => {
     console.log({ isLoading, error, data });
