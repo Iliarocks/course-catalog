@@ -20,6 +20,7 @@ export default function Home() {
               { name: { $ilike: `%${search}%` } },
             ],
           },
+          limit: 15,
         },
       },
     };
