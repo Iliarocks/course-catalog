@@ -12,7 +12,7 @@ export default function Home() {
   const query = React.useMemo(() => {
     return {
       courses: {
-        $: {
+        $option: {
           where: {
             or: [
               { subject: { $ilike: `%${search}%` } },
