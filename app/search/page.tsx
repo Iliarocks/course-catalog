@@ -33,22 +33,30 @@ export default function Search() {
   if (isLoading || !data || !data.courses) return;
 
   return (
-    <div className="max-w-screen-sm m-auto">
-      <input
-        className="mb-1.5 block bg-tertiary p-3 focus:outline-none text-xs text-primary w-full rounded-md"
-        type="search"
-        placeholder="Search courses..."
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <section className="flex flex-col gap-xs-gutter p-[5px]">
+    <div className="flex flex-col gap-sm">
+      <form>
+        <label className="text-second text-xs" htmlFor="search">
+          Search courses
+        </label>
+        <input
+          id="search"
+          className="mb-1.5 block shadow-custom bg-tertiary p-sm focus:outline-none text-xs text-first w-full rounded-sm"
+          type="search"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </form>
+      <section className="flex flex-col gap-sm rounded-sm">
         {data.courses.map((course, index) => (
-          <article key={index} className="mb-2">
+          <article
+            key={index}
+            className="rounded-sm shadow-custom border-fourth border p-sm"
+          >
             <p>
-              <span className="text-primary">{course.subject} </span>
-              <span className="text-secondary">{course.code}</span>
+              <span className="text-first">{course.subject} </span>
+              <span className="text-second">{course.code}</span>
             </p>
             <p>
-              <span className="text-secondary text-xs">{course.name}</span>
+              <span className="text-third text-xs">{course.name}</span>
             </p>
           </article>
         ))}

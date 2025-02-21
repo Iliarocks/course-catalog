@@ -20,6 +20,10 @@ export default {
         md: "20px",
         lg: "30px",
       },
+      boxShadow: {
+        custom:
+          "1px 2px 2px hsl(214deg 23% 40% / 0.05), 2px 4px 4px hsl(214deg 23% 40% / 0.05), 4px 8px 8px hsl(214deg 23% 40% / 0.05), 8px 16px 16px hsl(214deg 23% 40% / 0.025)",
+      },
     },
   },
   plugins: [],

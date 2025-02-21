@@ -16,7 +16,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans text-sm">
         <Navigation />
-        <main className="p-[20px] bg-first md:ml-[70px]">{children}</main>
+        <main className="p-[20px] mb-[70px] md:mb-0 md:ml-[70px]">
+          {children}
+        </main>
       </body>
     </html>
   );
