@@ -9,10 +9,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#404040",
-        secondary: "#808080",
-        tertiary: "#f5f5f5",
-        quaternary: "#fafafa",
+        first: "#1B263B",
+        second: "#415A77",
+        third: "#778DA9",
+        fourth: "#E0E1DD",
+      },
+      spacing: {
+        xs: "5px",
+        sm: "10px",
+        md: "20px",
+        lg: "30px",
       },
     },
   },
