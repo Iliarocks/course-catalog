@@ -13,6 +13,7 @@ export default {
         second: "#415A77",
         third: "#778DA9",
         fourth: "#E0E1DD",
+        fifth: "#F5F5F5",
       },
       spacing: {
         xs: "5px",
@@ -22,7 +23,7 @@ export default {
       },
       boxShadow: {
         custom:
-          "2px 4px 4px hsl(214deg 23% 35% / 0.025), 4px 8px 8px hsl(214deg 23% 35% / 0.025), 8px 16px 16px hsl(214deg 23% 35% / 0.025)",
+          "2px 4px 4px hsl(214deg 23% 56% / 0.025), 4px 8px 8px hsl(214deg 23% 56% / 0.05)",
       },
     },
   },

@@ -40,7 +40,7 @@ export default function Search() {
         </label>
         <input
           id="search"
-          className="mb-1.5 block shadow-custom bg-tertiary p-sm focus:outline-none text-xs text-first w-full rounded-sm"
+          className="mb-1.5 bg-fifth block shadow-custom bg-tertiary p-sm focus:outline-none text-xs text-first w-full rounded-sm"
           type="search"
           onChange={(e) => setSearch(e.target.value)}
         />
