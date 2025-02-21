@@ -33,7 +33,7 @@ export default function Search() {
   if (isLoading || !data || !data.courses) return;
 
   return (
-    <div className="flex flex-col gap-sm">
+    <div className="flex flex-col gap-sm md:max-w-screen-sm md:m-auto">
       <form>
         <label className="text-second text-xs" htmlFor="search">
           Search courses
