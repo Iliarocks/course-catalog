@@ -24,7 +24,7 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="fixed bg-white w-screen bottom-0 flex justify-between p-md md:w-auto md:flex-col md:h-screen">
+    <nav className="bg-white w-screen bottom-0 flex justify-between p-md md:w-auto md:flex-col md:h-screen">
       <section className="flex gap-lg items-center md:flex-col">
         <Link href="/">
           <img className="w-md" src="/logo.png"></img>

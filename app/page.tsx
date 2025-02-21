@@ -1,11 +1,22 @@
 "use client";
 
 import React from "react";
-// import { init } from "@instantdb/react";
-// import schema from "../instant.schema";
-
-// const db = init({ appId: "d61474bf-3716-48ff-a937-160d78848b7f", schema });
 
 export default function Home() {
-  return <main className="max-w-screen-sm m-auto">Home</main>;
+  return (
+    <div className="grid place-items-center h-full">
+      <div className="flex flex-col gap-md">
+        <h1 className="text-first text-5xl font-bold">
+          Welcome to
+          <br />
+          <span className="text-second">UBCMatch</span>
+        </h1>
+        <p className="text-third">
+          Feel free to search courses while we
+          <br />
+          work on getting other features ready!
+        </p>
+      </div>
+    </div>
+  );
 }

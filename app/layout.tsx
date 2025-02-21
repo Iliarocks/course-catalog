@@ -14,11 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans text-sm">
+      <body className="font-sans text-sm w-screen h-screen flex flex-col-reverse md:flex-row">
         <Navigation />
-        <main className="p-[20px] mb-[70px] md:mb-0 md:ml-[70px]">
-          {children}
-        </main>
+        <main className="grow p-md overflow-scroll">{children}</main>
       </body>
     </html>
   );
