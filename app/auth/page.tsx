@@ -3,16 +3,18 @@
 import React from "react";
 import { init } from "@instantdb/react";
 import schema from "../../instant.schema";
+import { useRouter } from "next/navigation";
 
 const db = init({ appId: "d61474bf-3716-48ff-a937-160d78848b7f", schema });
 
 export default function Auth() {
   const { isLoading, user, error } = db.useAuth();
   const [sentEmail, setSentEmail] = React.useState<string>("");
+  const router = useRouter();
 
   React.useEffect(() => {
-    document.location.href = "/";
-  }, [user]);
+    if (user) router.push("/");
+  }, [user, router]);
 
   if (isLoading) return;
 
