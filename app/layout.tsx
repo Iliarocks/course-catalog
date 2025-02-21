@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navigation from "./components/navigation";
 
 export const metadata: Metadata = {
   title: "UBC Course Catalog",
@@ -13,7 +14,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans">{children}</body>
+      <body className="font-sans text-sm flex">
+        <Navigation />
+        <main className="h-screen overflow-scroll grow p-[20px]">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

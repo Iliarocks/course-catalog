@@ -7,52 +7,5 @@ import schema from "../instant.schema";
 const db = init({ appId: "d61474bf-3716-48ff-a937-160d78848b7f", schema });
 
 export default function Home() {
-  const pageSize = 120;
-  const [search, setSearch] = React.useState<string>("");
-
-  const { isLoading, error, data } = db.useQuery({
-    courses: {
-      $: {
-        where: {
-          or: [
-            { subject: { $ilike: `%${search}%` } },
-            { code: { $ilike: `%${search}%` } },
-            { name: { $ilike: `%${search}%` } },
-          ],
-        },
-        limit: pageSize,
-      },
-    },
-  });
-
-  if (error) {
-    console.log(error);
-    return;
-  }
-
-  if (isLoading || !data || !data.courses) return;
-
-  return (
-    <main className="max-w-screen-sm m-auto">
-      <input
-        className="mb-1.5 block bg-tertiary p-1.5 text-xs text-primary w-full"
-        type="search"
-        placeholder="Search courses..."
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <section className="flex flex-col gap-xs-gutter">
-        {data.courses.map((course, index) => (
-          <article key={index} className="mb-2">
-            <p>
-              <span className="text-primary">{course.subject} </span>
-              <span className="text-secondary">{course.code}</span>
-            </p>
-            <p>
-              <span className="text-secondary text-xs">{course.name}</span>
-            </p>
-          </article>
-        ))}
-      </section>
-    </main>
-  );
+  return <main className="max-w-screen-sm m-auto">Home</main>;
 }
