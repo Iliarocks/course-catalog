@@ -31,8 +31,8 @@ export default function Navigation() {
         </Link>
       </section>
       <section className="flex gap-lg items-center md:flex-col">
-        <div className="rounded-full h-lg w-lg bg-second"></div>
-        <div className="rounded-full h-lg w-lg bg-second"></div>
+        {/* <div className="rounded-full h-lg w-lg bg-second"></div>
+        <div className="rounded-full h-lg w-lg bg-second"></div> */}
         <Link href="/search">
           <FontAwesomeIcon
             icon={faMagnifyingGlass}

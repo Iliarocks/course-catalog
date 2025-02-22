@@ -33,19 +33,20 @@ export default function Search() {
   if (isLoading || !data || !data.courses) return;
 
   return (
-    <div className="flex flex-col gap-sm md:max-w-screen-sm md:m-auto">
-      <form>
-        <label className="text-second text-xs" htmlFor="search">
+    <div className="flex flex-col gap-sm md:min-w-2xl">
+      <form onSubmit={(e) => e.preventDefault()}>
+        <label className="text-second text-sm" htmlFor="search">
           Search courses
         </label>
         <input
           id="search"
-          className="mb-1.5 bg-fifth block shadow-custom bg-tertiary p-sm focus:outline-none text-xs text-first w-full rounded-sm"
+          className="mb-1.5 bg-fifth block shadow-custom bg-tertiary p-sm focus:outline-none text-sm text-first w-full rounded-sm"
           type="search"
           onChange={(e) => setSearch(e.target.value)}
+          autoFocus
         />
       </form>
-      <section className="flex flex-col gap-sm rounded-sm">
+      <section className="flex flex-col gap-sm rounded-sm w-full">
         {data.courses.map((course, index) => (
           <article
             key={index}
