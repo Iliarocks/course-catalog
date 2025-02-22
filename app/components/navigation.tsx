@@ -24,23 +24,19 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="bg-white w-screen bottom-0 flex justify-between p-md md:w-auto md:flex-col md:h-screen">
-      <section className="flex gap-lg items-center md:flex-col">
+    <nav className="bg-white w-screen bottom-0 flex justify-between md:w-auto md:flex-col md:h-screen">
+      {/* <section className="flex gap-lg items-center md:flex-col">
         <Link href="/">
           <img className="w-md" src="/logo.png"></img>
         </Link>
       </section>
       <section className="flex gap-lg items-center md:flex-col">
-        {/* <div className="rounded-full h-lg w-lg bg-second"></div>
-        <div className="rounded-full h-lg w-lg bg-second"></div> */}
+        <div className="rounded-full h-lg w-lg bg-second"></div>
+        <div className="rounded-full h-lg w-lg bg-second"></div>
         <Link href="/search">
-          <FontAwesomeIcon
-            icon={faMagnifyingGlass}
-            className="text-base"
-            color="#415A77"
-          />
+          <FontAwesomeIcon icon={faMagnifyingGlass} className="text-base" />
         </Link>
-      </section>
+      </section> */}
       <section className="flex gap-lg items-center md:flex-col">
         {user ? (
           <a
@@ -53,16 +49,11 @@ export default function Navigation() {
             <FontAwesomeIcon
               icon={faArrowRightFromBracket}
               className="text-lg"
-              color="#415A77"
             />
           </a>
         ) : (
           <Link href="/auth">
-            <FontAwesomeIcon
-              icon={faArrowRightToBracket}
-              className="text-lg"
-              color="#415A77"
-            />
+            <FontAwesomeIcon icon={faArrowRightToBracket} className="text-lg" />
           </Link>
         )}
       </section>

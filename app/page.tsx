@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Search from "./search/page";
+import Searcher from "./components/searcher";
 
 export default function Home() {
   return (
@@ -13,11 +13,10 @@ export default function Home() {
           <span className="text-second">UBCMatch</span>
         </h1>
         <p className="text-third">
-          Feel free to search courses while we
-          <br />
-          work on getting other features ready!
+          Feel free to search courses while we work on getting other features
+          ready!
         </p>
-        <Search />
+        <Searcher pageSize={120} />
       </div>
     </div>
   );
