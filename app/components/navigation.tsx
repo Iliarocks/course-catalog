@@ -52,7 +52,7 @@ export default function Navigation() {
           >
             <FontAwesomeIcon
               icon={faArrowRightFromBracket}
-              className="text-base"
+              className="text-lg"
               color="#415A77"
             />
           </a>
@@ -60,7 +60,7 @@ export default function Navigation() {
           <Link href="/auth">
             <FontAwesomeIcon
               icon={faArrowRightToBracket}
-              className="text-base"
+              className="text-lg"
               color="#415A77"
             />
           </Link>

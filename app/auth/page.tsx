@@ -23,9 +23,15 @@ export default function Auth() {
     return;
   }
 
-  if (sentEmail) return <CodeStep sentEmail={sentEmail} />;
-
-  return <EmailStep onSendEmail={setSentEmail} />;
+  return (
+    <div className="grid place-items-center w-full h-full">
+      {sentEmail ? (
+        <CodeStep sentEmail={sentEmail} />
+      ) : (
+        <EmailStep onSendEmail={setSentEmail} />
+      )}
+    </div>
+  );
 }
 
 function EmailStep({ onSendEmail }: { onSendEmail: (email: string) => void }) {
@@ -45,20 +51,28 @@ function EmailStep({ onSendEmail }: { onSendEmail: (email: string) => void }) {
   };
 
   return (
-    <form key="email" onSubmit={handleSubmit}>
-      <label className="mb-1.5 block text-xs text-secondary">
-        Let&apos;s log in
-      </label>
+    <form
+      className="flex flex-col gap-sm max-w-lg"
+      key="email"
+      onSubmit={handleSubmit}
+    >
+      <h1 className="text-first text-4xl font-bold">Let&apos;s log you in</h1>
+      <p className="text-second">
+        Enter your email, and we&apos;ll send you a verification code.
+        We&apos;ll create an account for you too if you don&apos;t already have
+        one!
+      </p>
+      <label className="mb-1.5 block text-xs text-third">Email</label>
       <input
         ref={inputRef}
         type="email"
-        className="mb-1.5 block bg-tertiary p-1.5 text-xs text-primary"
+        className="mb-1.5 block bg-fifth p-1.5 text-xs text-primary"
         required
         autoFocus
       />
       <button
         type="submit"
-        className="block bg-tertiary p-1.5 text-xs text-primary"
+        className="block bg-third text-fourth p-1.5 text-xs text-primary"
       >
         Send Code
       </button>
@@ -81,20 +95,29 @@ function CodeStep({ sentEmail }: { sentEmail: string }) {
   };
 
   return (
-    <form key="email" onSubmit={handleSubmit}>
-      <label className="mb-1.5 block text-xs text-secondary">Magic code</label>
+    <form
+      className="flex flex-col gap-sm max-w-lg"
+      key="code"
+      onSubmit={handleSubmit}
+    >
+      <h1 className="text-first text-4xl font-bold">Enter your code</h1>
+      <p className="text-second">
+        We sent an email to <strong>{sentEmail}</strong>. Check your email, and
+        paste the code you see.
+      </p>
+      <label className="mb-1.5 block text-xs text-third">Code</label>
       <input
         ref={inputRef}
         type="text"
-        className="mb-1.5 block bg-tertiary p-1.5 text-xs text-primary"
+        className="mb-1.5 block bg-fifth p-1.5 text-xs text-primary"
         required
         autoFocus
       />
       <button
         type="submit"
-        className="block bg-tertiary p-1.5 text-xs text-primary"
+        className="block bg-third text-fourth p-1.5 text-xs text-primary"
       >
-        Log in
+        Verify Code
       </button>
     </form>
   );
