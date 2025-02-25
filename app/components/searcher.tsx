@@ -30,7 +30,7 @@ export default function Searcher({ pageSize }: { pageSize: number }) {
   if (isLoading || !data || !data.courses) return;
 
   return (
-    <div className="w-full flex-col flex gap-sm">
+    <div className="flex h-full w-full flex-col gap-sm">
       <form
         className="flex flex-col gap-xs"
         onSubmit={(e) => e.preventDefault()}
@@ -40,24 +40,24 @@ export default function Searcher({ pageSize }: { pageSize: number }) {
         </label>
         <input
           id="search"
-          className="mb-1.5 bg-fifth block shadow-custom bg-tertiary p-sm focus:outline-none text-sm text-first w-full rounded-sm md:text-lg"
+          className="bg-tertiary mb-1.5 block w-full rounded-sm bg-fifth p-sm text-sm text-first shadow-custom focus:outline-none md:text-lg"
           type="search"
           onChange={(e) => setSearch(e.target.value)}
           autoFocus
         />
       </form>
-      <section className="flex flex-col gap-sm rounded-sm w-full">
+      <section className="flex w-full flex-col gap-sm rounded-sm">
         {data.courses.map((course, index) => (
           <article
             key={index}
-            className="rounded-sm shadow-custom border-fourth border p-sm"
+            className="rounded-sm border border-fourth p-sm shadow-custom"
           >
             <p>
               <span className="text-first">{course.subject} </span>
               <span className="text-second">{course.code}</span>
             </p>
             <p>
-              <span className="text-third text-sm md:text-base">
+              <span className="text-sm text-third md:text-base">
                 {course.name}
               </span>
             </p>

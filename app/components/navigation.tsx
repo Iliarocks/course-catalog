@@ -3,7 +3,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faMagnifyingGlass,
+  // faMagnifyingGlass,
   faArrowRightToBracket,
   faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
@@ -24,20 +24,20 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="bg-white w-screen bottom-0 flex justify-between md:w-auto md:flex-col md:h-screen">
-      {/* <section className="flex gap-lg items-center md:flex-col">
+    <nav className="h-ful flex w-full justify-between bg-white md:w-auto md:flex-col">
+      {/* <section className="flex items-center gap-lg md:flex-col">
         <Link href="/">
           <img className="w-md" src="/logo.png"></img>
         </Link>
       </section>
-      <section className="flex gap-lg items-center md:flex-col">
-        <div className="rounded-full h-lg w-lg bg-second"></div>
-        <div className="rounded-full h-lg w-lg bg-second"></div>
+      <section className="flex items-center gap-lg md:flex-col">
+        <div className="h-lg w-lg rounded-full bg-second"></div>
+        <div className="h-lg w-lg rounded-full bg-second"></div>
         <Link href="/search">
           <FontAwesomeIcon icon={faMagnifyingGlass} className="text-base" />
         </Link>
       </section> */}
-      <section className="flex gap-lg items-center md:flex-col">
+      <section className="flex items-center gap-lg md:flex-col">
         {user ? (
           <a
             href=""
