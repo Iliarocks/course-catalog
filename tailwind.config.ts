@@ -9,21 +9,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        first: "#1B263B",
-        second: "#415A77",
-        third: "#778DA9",
-        fourth: "#E0E1DD",
-        fifth: "#F5F5F5",
+        first: "#274C77",
+        second: "#6096BA",
+        third: "#A3CEF1",
+        fourth: "#8B8C89",
+        fifth: "#E7ECEF",
       },
       spacing: {
         xs: "5px",
         sm: "10px",
         md: "20px",
         lg: "30px",
+        xl: "40px",
       },
       boxShadow: {
-        custom:
-          "2px 4px 4px hsl(214deg 23% 56% / 0.025), 4px 8px 8px hsl(214deg 23% 56% / 0.05)",
+        custom: "0 1px 4px 0 rgba(0,0,0,.1)",
+      },
+      fontSize: {
+        "2xs": ["10px", "1rem"],
       },
     },
   },

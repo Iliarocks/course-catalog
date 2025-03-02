@@ -14,10 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <body className="p-md font-sans text-base md:text-lg w-dvh h-dvh flex flex-col-reverse gap-md md:flex-row"> */}
-      <body className="flex h-dvh w-dvw flex-col-reverse gap-md p-md md:flex-row">
+      <body className="flex h-dvh w-dvw flex-col bg-white font-sans text-sm">
         <Navigation />
-        <main className="h-full w-full grow overflow-y-scroll">{children}</main>
+        <main className="h-full w-full grow overflow-hidden">{children}</main>
       </body>
     </html>
   );

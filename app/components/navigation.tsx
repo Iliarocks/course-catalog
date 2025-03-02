@@ -1,12 +1,6 @@
 "use client";
 
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  // faMagnifyingGlass,
-  faArrowRightToBracket,
-  faArrowRightFromBracket,
-} from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { init } from "@instantdb/react";
 import schema from "../../instant.schema";
@@ -24,39 +18,13 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="h-ful flex w-full justify-between bg-white md:w-auto md:flex-col">
-      {/* <section className="flex items-center gap-lg md:flex-col">
+    <nav className="flex justify-between bg-white p-md">
+      <section>
         <Link href="/">
-          <img className="w-md" src="/logo.png"></img>
+          <div className="h-[25px] w-[25px] rounded-full bg-first"></div>
         </Link>
       </section>
-      <section className="flex items-center gap-lg md:flex-col">
-        <div className="h-lg w-lg rounded-full bg-second"></div>
-        <div className="h-lg w-lg rounded-full bg-second"></div>
-        <Link href="/search">
-          <FontAwesomeIcon icon={faMagnifyingGlass} className="text-base" />
-        </Link>
-      </section> */}
-      <section className="flex items-center gap-lg md:flex-col">
-        {user ? (
-          <a
-            href=""
-            onClick={(e) => {
-              e.preventDefault();
-              db.auth.signOut();
-            }}
-          >
-            <FontAwesomeIcon
-              icon={faArrowRightFromBracket}
-              className="text-lg"
-            />
-          </a>
-        ) : (
-          <Link href="/auth">
-            <FontAwesomeIcon icon={faArrowRightToBracket} className="text-lg" />
-          </Link>
-        )}
-      </section>
+      <section></section>
     </nav>
   );
 }
