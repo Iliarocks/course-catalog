@@ -18,7 +18,7 @@ export default function Home() {
           </h1>
           <div className="flex flex-col gap-xs lg:flex-row lg:gap-sm">
             <input
-              className="w-full rounded p-sm py-[15px] text-first shadow-custom focus:outline focus:outline-third md:px-md md:text-base lg:w-[768px]"
+              className="w-full rounded bg-white p-sm py-[15px] text-first shadow-custom focus:outline focus:outline-third md:px-md md:text-base lg:w-[768px]"
               type="search"
               onChange={(e) => setSearch(e.target.value)}
               autoFocus
