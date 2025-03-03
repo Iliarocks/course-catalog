@@ -7,6 +7,7 @@ export default function Home() {
   const pageSize = 50;
   const [search, setSearch] = React.useState<string>("");
   const [level, setLevel] = React.useState<string>("");
+  const [credits, setCredits] = React.useState<string>("");
 
   return (
     <div className="flex h-full w-full flex-col">
@@ -26,7 +27,7 @@ export default function Home() {
               id="level"
               onChange={(e) => setLevel(e.target.value)}
             >
-              <option value="">Level</option>
+              <option value="1">Level</option>
               <option value="1">100</option>
               <option value="2">200</option>
               <option value="3">300</option>
@@ -38,6 +39,7 @@ export default function Home() {
               className="w-fit rounded bg-white p-xs"
               name="credit"
               id="credit"
+              onChange={(e) => setCredits(e.target.value)}
             >
               <option value="">Credits</option>
               <option value="1">1</option>
@@ -49,7 +51,12 @@ export default function Home() {
         </header>
       </section>
       <section className="grow overflow-y-scroll">
-        <Searcher limit={pageSize} search={search} level={level} />
+        <Searcher
+          limit={pageSize}
+          search={search}
+          level={level}
+          credits={credits}
+        />
       </section>
     </div>
   );

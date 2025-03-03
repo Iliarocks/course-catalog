@@ -22,6 +22,7 @@ const _schema = i.schema({
       credits: i.string(),
       name: i.string().indexed(),
       subject: i.string().indexed(),
+      description: i.string().indexed(),
     }),
   },
   // You can define links here.
