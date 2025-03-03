@@ -10,8 +10,8 @@ const db = init({ appId: "d61474bf-3716-48ff-a937-160d78848b7f", schema });
 export default function Auth() {
   const pathname = usePathname();
   const coursePath = pathname.split("/").pop();
-  const courseSubject = coursePath.substring(0, 4);
-  const courseCode = coursePath.substring(4, 8);
+  const courseSubject = coursePath!.substring(0, 4);
+  const courseCode = coursePath!.substring(4, 8);
 
   const { isLoading, error, data } = db.useQuery({
     courses: {
