@@ -16,15 +16,15 @@ export default function Auth() {
     if (user) router.push("/");
   }, [user, router]);
 
-  if (isLoading) return;
-
   if (error) {
     console.log(error);
     return;
   }
 
+  if (isLoading) return;
+
   return (
-    <div className="grid place-items-center w-full h-full">
+    <div className="grid h-full w-full place-items-center p-md md:p-lg">
       {sentEmail ? (
         <CodeStep sentEmail={sentEmail} />
       ) : (
@@ -52,27 +52,27 @@ function EmailStep({ onSendEmail }: { onSendEmail: (email: string) => void }) {
 
   return (
     <form
-      className="flex flex-col gap-sm max-w-lg"
+      className="flex max-w-lg flex-col gap-sm"
       key="email"
       onSubmit={handleSubmit}
     >
-      <h1 className="text-first text-4xl font-bold">Let&apos;s log you in</h1>
+      <h1 className="text-4xl font-bold text-first">Let&apos;s log you in</h1>
       <p className="text-second">
         Enter your email, and we&apos;ll send you a verification code.
         We&apos;ll create an account for you too if you don&apos;t already have
         one!
       </p>
-      <label className="mb-1.5 block text-xs text-third">Email</label>
+      <label className="mb-1 block text-sm text-fourth">Email</label>
       <input
         ref={inputRef}
         type="email"
-        className="mb-1.5 block bg-fifth p-1.5 text-xs text-primary"
+        className="rounded bg-white p-sm py-[15px] text-first shadow-custom outline outline-fifth focus:outline-third md:px-md md:text-base"
         required
         autoFocus
       />
       <button
         type="submit"
-        className="block bg-third text-fourth p-1.5 text-xs text-primary"
+        className="block rounded bg-first p-sm text-white md:text-base lg:duration-200 lg:hover:bg-second lg:hover:shadow-custom"
       >
         Send Code
       </button>
@@ -96,26 +96,26 @@ function CodeStep({ sentEmail }: { sentEmail: string }) {
 
   return (
     <form
-      className="flex flex-col gap-sm max-w-lg"
+      className="flex max-w-lg flex-col gap-sm"
       key="code"
       onSubmit={handleSubmit}
     >
-      <h1 className="text-first text-4xl font-bold">Enter your code</h1>
+      <h1 className="text-4xl font-bold text-first">Enter your code</h1>
       <p className="text-second">
         We sent an email to <strong>{sentEmail}</strong>. Check your email, and
         paste the code you see.
       </p>
-      <label className="mb-1.5 block text-xs text-third">Code</label>
+      <label className="mb-1.5 block text-sm text-fourth">Code</label>
       <input
         ref={inputRef}
         type="text"
-        className="mb-1.5 block bg-fifth p-1.5 text-xs text-primary"
+        className="rounded bg-white p-sm py-[15px] text-first shadow-custom outline outline-fifth focus:outline-third md:px-md md:text-base"
         required
         autoFocus
       />
       <button
         type="submit"
-        className="block bg-third text-fourth p-1.5 text-xs text-primary"
+        className="block rounded bg-first p-sm text-sm text-white md:text-base lg:duration-200 lg:hover:bg-second lg:hover:shadow-custom"
       >
         Verify Code
       </button>

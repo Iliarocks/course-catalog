@@ -2,8 +2,21 @@
 
 import React from "react";
 import Link from "next/link";
+import { init } from "@instantdb/react";
+import schema from "../../instant.schema";
+
+const db = init({ appId: "d61474bf-3716-48ff-a937-160d78848b7f", schema });
 
 export default function Navigation() {
+  const { isLoading, user, error } = db.useAuth();
+
+  if (error) {
+    console.log(error);
+    return;
+  }
+
+  if (isLoading) return;
+
   return (
     <nav className="flex justify-between bg-white p-md md:px-lg">
       <section>
@@ -25,7 +38,23 @@ export default function Navigation() {
           {/* <div className="h-[25px] w-[25px] rounded-full bg-first md:h-[30px] md:w-[30px]"></div> */}
         </Link>
       </section>
-      <section></section>
+      <section>
+        {user ? (
+          <button
+            className="text-xs font-medium text-first md:text-sm lg:duration-100 lg:hover:scale-105"
+            onClick={() => db.auth.signOut()}
+          >
+            Sign out
+          </button>
+        ) : (
+          <Link
+            className="text-xs font-medium text-first md:text-sm lg:duration-100 lg:hover:scale-105"
+            href="/auth"
+          >
+            Sign in
+          </Link>
+        )}
+      </section>
     </nav>
   );
 }
