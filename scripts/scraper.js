@@ -3,7 +3,7 @@ import puppeteer from "puppeteer";
 
 const db = init({
   appId: "d61474bf-3716-48ff-a937-160d78848b7f",
-  adminToken:,
+  adminToken: process.env.INSTANT_APP_ADMIN_TOKEN,
 });
 
 const browser = await puppeteer.launch();
