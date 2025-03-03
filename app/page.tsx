@@ -25,7 +25,7 @@ export default function Home() {
             />
             <div className="flex gap-xs text-xs font-medium text-first md:text-sm lg:gap-sm">
               <select
-                className="w-fit rounded bg-white p-xs shadow-custom md:px-md lg:text-base lg:hover:cursor-pointer"
+                className="w-fit rounded bg-white p-sm shadow-custom md:px-md lg:text-base lg:hover:cursor-pointer"
                 name="level"
                 id="level"
                 onChange={(e) => setLevel(e.target.value)}
@@ -39,7 +39,7 @@ export default function Home() {
                 <option value="6">600</option>
               </select>
               <select
-                className="w-fit rounded bg-white p-xs shadow-custom md:px-md lg:text-base lg:hover:cursor-pointer"
+                className="w-fit rounded bg-white p-sm shadow-custom md:px-md lg:text-base lg:hover:cursor-pointer"
                 name="credit"
                 id="credit"
                 onChange={(e) => setCredits(e.target.value)}
