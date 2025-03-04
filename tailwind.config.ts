@@ -15,18 +15,8 @@ export default {
         fourth: "#8B8C89",
         fifth: "#E7ECEF",
       },
-      spacing: {
-        xs: "5px",
-        sm: "10px",
-        md: "20px",
-        lg: "30px",
-        xl: "40px",
-      },
       boxShadow: {
         custom: "0 1px 4px 0 rgba(0,0,0,.1)",
-      },
-      fontSize: {
-        "2xs": ["10px", "1rem"],
       },
     },
   },
